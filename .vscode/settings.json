@@ -1,0 +1,58 @@
+{
+    "Lua.runtime.version": "Lua 5.1",
+    "Lua.diagnostics.globals": [
+        "BackdropTemplateMixin",
+        "C_AddOns",
+        "C_EditMode",
+        "C_Timer",
+        "ceil",
+        "CompactPartyFrame",
+        "CompactRaidFrameContainer_TryUpdate",
+        "CompactRaidFrameContainer",
+        "CompactRaidFrameManager",
+        "DEFAULT_CHAT_FRAME",
+        "EditModeManagerFrame",
+        "Enum",
+        "format",
+        "GetLocale",
+        "gsub",
+        "HUD_EDIT_MODE_MENU",
+        "HUD_EDIT_MODE_PARTY_FRAMES_LABEL",
+        "HUD_EDIT_MODE_SETTING_UNIT_FRAME_RAID_STYLE_PARTY_FRAMES",
+        "InCombatLockdown",
+        "IsInRaid",
+        "KRF_TITLE",
+        "PartyFrame",
+        "SELECTED_CHAT_FRAME",
+        "SlashCmdList",
+        "WOW_PROJECT_ID",
+        "WOW_PROJECT_MAINLINE"
+    ],
+    "cSpell.words": [
+        "prepatch"
+    ],
+    "Lua.diagnostics.disable": [
+    ],
+    "peacock.color": "#832561",
+    "workbench.colorCustomizations": {
+        "activityBar.activeBackground": "#ab307e",
+        "activityBar.background": "#ab307e",
+        "activityBar.foreground": "#e7e7e7",
+        "activityBar.inactiveForeground": "#e7e7e799",
+        "activityBarBadge.background": "#25320e",
+        "activityBarBadge.foreground": "#e7e7e7",
+        "commandCenter.border": "#e7e7e799",
+        "sash.hoverBorder": "#ab307e",
+        "sideBar.border": "#ab307e",
+        "statusBar.background": "#832561",
+        "statusBar.foreground": "#e7e7e7",
+        "statusBarItem.hoverBackground": "#ab307e",
+        "statusBarItem.remoteBackground": "#832561",
+        "statusBarItem.remoteForeground": "#e7e7e7",
+        "tab.activeBorder": "#ab307e",
+        "titleBar.activeBackground": "#832561",
+        "titleBar.activeForeground": "#e7e7e7",
+        "titleBar.inactiveBackground": "#83256199",
+        "titleBar.inactiveForeground": "#e7e7e799"
+    }
+}

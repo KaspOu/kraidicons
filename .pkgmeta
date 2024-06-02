@@ -1,0 +1,8 @@
+package-as: KRaidIcons
+
+manual-changelog: ChangeLog.txt
+
+license-output: License.md
+
+ignore:
+    - .vscode
