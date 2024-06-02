@@ -1,0 +1,86 @@
+<Ui xmlns="http://www.blizzard.com/wow/ui/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.blizzard.com/wow/ui/
+..\FrameXML\UI.xsd">
+	<Include file="Widgets.lua"/>
+	<CheckButton name="KRIUI_CheckboxWidget" inherits="OptionsBaseCheckButtonTemplate" virtual="true">
+		<Layers>
+			<Layer level="ARTWORK">
+			<FontString inherits="GameFontHighlightLeft" parentKey="Text">
+				<Anchors>
+				<Anchor point="LEFT" relativePoint="RIGHT">
+					<Offset>
+					<AbsDimension x="2" y="1"/>
+					</Offset>
+				</Anchor>
+				</Anchors>
+			</FontString>
+			</Layer>
+		</Layers>
+		<Scripts>
+			<OnLoad> K_SHARED_UI.CheckboxWidget_OnLoad(self)</OnLoad>
+			<OnClick>K_SHARED_UI.CheckboxWidget_OnClick(self)</OnClick>
+			<OnEnter>K_SHARED_UI.CheckboxWidget_OnEnter(self)</OnEnter>
+			<OnLeave>K_SHARED_UI.CheckboxWidget_OnLeave(self)</OnLeave>
+		</Scripts>
+	</CheckButton>
+	<CheckButton name="KRIUI_ColorWidget" inherits="KRIUI_CheckboxWidget" virtual="true">
+		<Scripts>
+			<OnLoad> K_SHARED_UI.ColorWidget_OnLoad(self)</OnLoad>
+			<OnClick>K_SHARED_UI.ColorWidget_OnClick(self)</OnClick>
+			<OnEnter>K_SHARED_UI.ColorWidget_OnEnter(self)</OnEnter>
+			<OnLeave>K_SHARED_UI.ColorWidget_OnLeave(self)</OnLeave>
+		</Scripts>
+	</CheckButton>
+	<Slider name="KRIUI_SliderWidget" inherits="OptionsSliderTemplate" virtual="true">
+		<Scripts>
+			<OnLoad> K_SHARED_UI.SliderWidget_OnLoad(self)</OnLoad>
+			<OnEnter>K_SHARED_UI.SliderWidget_OnEnter(self)</OnEnter>
+			<OnLeave>K_SHARED_UI.SliderWidget_OnLeave(self)</OnLeave>
+			<OnValueChanged>K_SHARED_UI.SliderWidget_OnValueChanged(self, value)</OnValueChanged>
+		</Scripts>
+	</Slider>
+	<CheckButton name="KRIUI_HeadingWidget" inherits="OptionsBaseCheckButtonTemplate" virtual="true">
+		<Size x="100" y="40" />
+		<Anchors>
+			<Anchor point="LEFT" relativeTo="$parent" relativePoint="LEFT"><Offset x="20" y="0"/></Anchor>
+			<Anchor point="RIGHT" relativeTo="$parent" relativePoint="RIGHT"><Offset x="0" y="0"/></Anchor>
+		</Anchors>
+		<Scripts>
+			<OnLoad> K_SHARED_UI.HeadingWidget_OnLoad(self)</OnLoad>
+			<OnClick>K_SHARED_UI.HeadingWidget_OnClick(self)</OnClick>
+		</Scripts>
+	</CheckButton>
+	<Frame name="KRIUI_DropDownWidget" inherits="UIDropDownMenuTemplate" virtual="true">
+		<Size x="100" y="40" />
+		<Scripts>
+			<OnLoad> K_SHARED_UI.DropDownWidget_OnLoad(self)</OnLoad>
+			<OnEnter>K_SHARED_UI.DropDownWidget_OnEnter(self)</OnEnter>
+			<OnLeave>K_SHARED_UI.DropDownWidget_OnLeave(self)</OnLeave>
+		</Scripts>
+	</Frame>
+<!--@do-not-package@-->
+<!--
+https://support.curseforge.com/en/support/solutions/articles/9000197281-automatic-packaging
+https://support.curseforge.com/en/support/solutions/articles/9000197952-preparing-the-packagemeta-file
+
+Blizzard Templates : https://github.com/tomrus88/BlizzardInterfaceCode
+>> CompactUnitFrame: https://github.com/tomrus88/BlizzardInterfaceCode/blob/master/Interface/FrameXML/CompactUnitFrame.xml
+https://openclassrooms.com/forum/sujet/code-lua-pour-wow-99378
+
+https://warcraft.wiki.gg/wiki/XML_schema
+https://eu.forums.blizzard.com/en/wow/t/improving-default-blizzardui/2890
+
+Pour les checkboxes, le composant InterfaceOptionsBaseCheckButtonTemplate plantait ( InterfaceOptionsPanel_CheckButton_OnClick(self); )
+https://github.com/tomrus88/BlizzardInterfaceCode/blob/master/Interface/FrameXML/InterfaceOptionsPanels.lua
+
+https://wowwiki-archive.fandom.com/wiki/UI_Object_UIDropDownMenu
+
+/fstack: Shows a Z-ordered (I think) list of all the UI frames under the cursor
+/etrace: Shows a running commentary of game events (and the parameters passed to them) as they happen
+/dump: Just dumps a variable's value to chat. This works better than print for tables.
+
+
+Wow Version:
+/run print(select(4, GetBuildInfo()))
+-->
+<!--@end-do-not-package@-->
+</Ui>

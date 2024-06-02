@@ -1,0 +1,125 @@
+<Ui xmlns="http://www.blizzard.com/wow/ui/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.blizzard.com/wow/ui/
+..\FrameXML\UI.xsd">
+	<Include file="..\Shared\OptionsAPI.lua"/>
+	<Include file="..\Shared\OptionsRaidIconsKRI.xml" />
+	<Include file="KRaidIcons.lua"/>
+	<Frame name="KRIUI_OptionsContainer">
+		<Layers>
+			<Layer level="ARTWORK">
+				<FontString parentKey="Title" inherits="GameFontNormalLarge" justifyH="LEFT" justifyV="TOP" text="OPTIONS_TITLE">
+					<Anchors><Anchor point="TOPLEFT"><Offset><AbsDimension x="20" y="-10" /></Offset></Anchor></Anchors>
+					<Size><AbsDimension x="550" y="30" /></Size>
+				</FontString>
+				<FontString parentKey="FooterNote" inherits="GameFontNormalSmall" justifyH="LEFT" justifyV="TOP" text="OPTIONS_ASTERIX" hidden="true">
+					<Anchors><Anchor point="BOTTOMRIGHT"><Offset><AbsDimension x="20" y="-10" /></Offset></Anchor></Anchors>
+					<Size><AbsDimension x="270" y="20" /></Size>
+				</FontString>
+			</Layer>
+		</Layers>
+		<Frames>
+			<Button inherits="UIPanelInfoButton">
+				<Size x="20" y="20" />
+				<Anchors>
+					<Anchor point="TOPLEFT" relativeTo="$parent"><Offset x="2" y="-9"/></Anchor>
+				</Anchors>
+				<Scripts>
+					<OnEnter>
+						GameTooltip:SetOwner(self, "ANCHOR_BOTTOMRIGHT");
+						GameTooltip:SetText(KRIUI.l.YL..KRIUI.l.SUBTITLE.."|r\n\n"..KRIUI.l.WH..KRIUI.l.DESC);
+					</OnEnter>
+				</Scripts>
+			</Button>
+			<ScrollFrame name="KRIUI_OptionsScrollFrame" inherits="ScrollFrameTemplate" Framelevel="0" enablemouse="true" setAllPoints="true">				
+				<KeyValues>
+					<KeyValue key="scrollBarHideIfUnscrollable" value="true" type="boolean"/>
+					<KeyValue key="scrollBarX" value="KRIUI.scrollBarX" type="global"/>
+					<KeyValue key="scrollBarTopY" value="0" type="number"/>
+					<KeyValue key="scrollBarBottomY" value="-0" type="number"/>
+				</KeyValues>
+				<Layers>
+					<Layer level="BACKGROUND">
+						<Texture setAllPoints="true">
+							<Color b=".8" a=".5"/>
+							<Gradient orientation="VERTICAL">
+								<MinColor b=".8"/>
+								<MaxColor b="0"/>
+							</Gradient>
+						</Texture>
+					</Layer>
+				</Layers>
+				<Anchors>
+					<Anchor point="TOPLEFT" relativePoint="TOPLEFT" relativeTo="$parent" x="0" y="-28"/>
+					<Anchor point="BOTTOMRIGHT" relativePoint="BOTTOMRIGHT" relativeTo="$parent" x="-30" y="8"/>
+				</Anchors>
+				<ScrollChild>
+					<Frame name="KRIUI_OptionsFrame">
+						<Size x="550" y="400" />
+						<Frames>
+							<!-- -->
+							<Frame parentKey="Options1" inherits="KRIOptionsRaidIcons">
+								<Anchors>									
+									<Anchor point="TOP" relativeTo="$parent"><Offset x="0" y="0"/></Anchor>
+								</Anchors>
+							</Frame>
+
+							<Button parentKey="ResetOptions" inherits="UIPanelButtonTemplate">
+								<Size x="200" y="20" />
+								<Anchors>
+									<Anchor point="BOTTOMLEFT" relativeKey="$parent" relativePoint="BOTTOMLEFT">
+										<Offset x="20" y="0"/>
+									</Anchor>
+								</Anchors>
+								<Scripts>
+									<OnLoad>
+										self.Text:SetText(KRIUI.l.OPTION_RESET_OPTIONS);
+										self.tooltipText = KRIUI.l.OPTION_RESET_OPTIONS;
+									</OnLoad>
+									<OnClick>
+										KRIUI.ConfirmReset();
+									</OnClick>
+								</Scripts>
+							</Button>
+							<CheckButton parentKey="ShowMsgNormal" inherits="KRIUI_CheckboxWidget">
+								<Attributes>
+									<Attribute name="text" value="OPTION_SHOWMSGNORMAL" />
+									<Attribute name="tooltip" value="OPTION_SHOWMSGNORMAL" />
+								</Attributes>
+								<Anchors>
+									<Anchor point="TOPLEFT" relativeKey="$parent.ResetOptions" relativePoint="BOTTOMLEFT"><Offset x="0" y="-50"/></Anchor>
+								</Anchors>
+							</CheckButton>
+							<CheckButton parentKey="ShowMsgWarning" inherits="KRIUI_CheckboxWidget">
+								<Attributes>
+									<Attribute name="text" value="OPTION_SHOWMSGWARNING" />
+									<Attribute name="tooltip" value="OPTION_SHOWMSGWARNING" />
+								</Attributes>
+								<Anchors>
+									<Anchor point="TOPLEFT" relativeKey="$parent.ShowMsgNormal" relativePoint="TOPLEFT">
+										<Offset x="170" y="0"/>
+									</Anchor>
+								</Anchors>
+							</CheckButton>
+							<CheckButton parentKey="ShowMsgError" inherits="KRIUI_CheckboxWidget">
+								<Attributes>
+									<Attribute name="text" value="OPTION_SHOWMSGERR" />
+									<Attribute name="tooltip" value="OPTION_SHOWMSGERR" />
+								</Attributes>
+								<Anchors>
+									<Anchor point="TOPLEFT" relativeKey="$parent.ShowMsgNormal" relativePoint="TOPLEFT">
+										<Offset x="340" y="0"/>
+									</Anchor>
+								</Anchors>
+							</CheckButton>
+						</Frames>
+					</Frame>
+				</ScrollChild>
+			</ScrollFrame>
+		</Frames>
+		<Scripts>
+			<OnLoad>
+				KRIUI.OptionsContainer_OnLoad(self, KRIUI_OptionsScrollFrame, KRIUI_OptionsFrame)
+			</OnLoad>
+		</Scripts>
+
+	</Frame>
+</Ui>

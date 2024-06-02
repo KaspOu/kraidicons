@@ -1,6 +1,9 @@
 # K Raid Icons
 
 **Set Raid Target Icons **
+Raid target icons (triangle, circle,...) displayed in the middle of raid frames
+ - Customizable position
+
 
 Commands:
 **/kri** will show status of k raid icons
