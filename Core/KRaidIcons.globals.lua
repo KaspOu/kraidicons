@@ -12,7 +12,7 @@ if (KRF_TITLE) then
 end
 
 ns.IS_RETAIL = (WOW_PROJECT_ID == (WOW_PROJECT_MAINLINE or 1));
-ns.DEFAULT_MAXBUFFS = 3;
+ns.DEFAULT_RAIDICON_SIZE = 12;
 
 
 -- Prepare I18N, with chat colors

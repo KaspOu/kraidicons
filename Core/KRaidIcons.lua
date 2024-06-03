@@ -12,6 +12,9 @@ local defaultOptions = {
 	Version = ns.VERSION,
 
 	RaidsIcons_Anchor = "CENTER",
+	RaidsIcons_Size = 12,
+	RaidsIcons_PosX = 0,
+	RaidsIcons_PosY = -2,
 
 	ShowMsgNormal = true,
 	ShowMsgWarning = true,

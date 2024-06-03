@@ -1,3 +1,6 @@
+v10.2.702
+- Icon size customizable
+
 v10.2.701
 - First version, extracted Raid icon from Kallye Raid Frames
 - Retail, Classic & Wrath versions
