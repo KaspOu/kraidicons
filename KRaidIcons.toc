@@ -1,4 +1,4 @@
-## Interface: 100207
+## Interface: 100207, 110000, 40400, 11502
 ## Title: |cff00ff00K|r Raid Icons
 ## Title-frFR: |cff00ff00K|r Raid Icons
 ## Notes: Shows target icons on raid frames
