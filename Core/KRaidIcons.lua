@@ -57,6 +57,7 @@ end
 local function InitAddon(frame)
 	SlashCmdList["KRI"] = SLASH_command;
 	SLASH_KRI1 = "/kri";
+	SLASH_KRI2 = "/ki";
 
 	if (ns.CONFLICT) then
 		ns.AddMsgErr(format(l.CONFLICT_MESSAGE, ns.CONFLICT_WITH));

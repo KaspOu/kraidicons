@@ -12,6 +12,8 @@
 ## X-License: MIT
 ## X-Website: https://bitbucket.org/KaspOu/kraidicons/
 ## X-Curse-Project-ID: 1029817
+## X-WoWI-ID: 26754
+## X-Wago-ID: n6VPZ8Gd
 
 Core\KRaidIcons.globals.lua
 Core\locales.xml
