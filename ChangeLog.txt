@@ -1,3 +1,6 @@
+v10.2.703
+- The War Within PTR: fix options
+
 v10.2.702
 - Icon size customizable
 
